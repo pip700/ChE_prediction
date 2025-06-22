@@ -70,13 +70,13 @@ Navigate to your working directory and launch the container:
 #### CPU-only version:
 
 ```bash
-sudo docker run -it --rm -v ${PWD}:/workspace ghcr.io/pip700/chepred:cpu
+sudo docker run -it --rm -v ${PWD}:/workspace ghcr.io/pip700/cheprediction:cpu
 ```
 
 #### GPU-enabled version:
 
 ```bash
-sudo docker run --gpus all -it --rm -v ${PWD}:/workspace ghcr.io/pip700/chepred:gpu
+sudo docker run --gpus all -it --rm -v ${PWD}:/workspace ghcr.io/pip700/cheprediction:gpu
 ```
 
 ### 3. Input File Selection
@@ -92,7 +92,7 @@ Once inside the Docker container, choose input format:
 * Enter `2` to upload a **CSV** file containing SMILES:
 
   ```
-  inhibitors.csv
+  samples.csv
   ```
 
 > The CSV file **must contain a column** with valid SMILES strings.
