@@ -2,7 +2,7 @@
 
 # 🧠 **ChEpred**: Cholinesterase Inhibitor Prediction Using AttentiveFP
 
-**ChEpred** is a Graph Neural Network (GNN)-based tool designed to predict the inhibitory activity of chemical compounds against **acetylcholinesterase (AChE)** and **butyrylcholinesterase (BuChE)**. Using molecular structures provided in **SMILES format**, the tool performs binary classification (Inhibitor vs. Non-inhibitor) and provides **atom-level and bond-level interpretability** through importance scores and visualizations.
+**ChEpred** is a Graph Neural Network (GNN)-based tool designed to predict the inhibitory activity of chemical compounds against **acetylcholinesterase (AChE)** and **butyrylcholinesterase (BuChE)**. Using molecular structures provided in **SMILES format**, the tool performs binary classification (Inhibitor vs. Non-inhibitor) as well as multi-classification for potency of inhibitors and provides **atom-level and bond-level interpretability** through importance graphs and visualizations.
 
 **ChEpred** is distributed as a user-friendly **Docker container**, making it easy to use without any setup. Whether you're a researcher, developer, or student, the web interface and containerized environment ensure accessible and reproducible predictions.
 
@@ -85,7 +85,7 @@ Once inside the Docker container, choose input format:
 
 * Enter `1` to input a **SMILES** string directly:
 
-  ```
+  ```scores
   CC(C)OC(=O)N1CCC(CC1)CN2C=NC3=CC=CC=C3C2=O
   ```
 
@@ -105,10 +105,9 @@ All output files are saved in a **timestamped folder** in your working directory
 
 ### Outputs Include:
 
-* `Prediction.csv` — Predicted class (Inhibitor / Non-inhibitor) and probabilities
-* `Atom-level_importance.csv` — Importance scores for each atom
-* `Bond-level_importance.csv` — Importance scores for each bond
+* `Prediction.csv` — Predicted class [Is Active (True): Inhibitor / Is Active (False): Non-inhibitor) and probabilities
 * `Atom & Bond-level.png` — Visualization of atom and bond significance
+* `Feature importance.png` — Visualization of histogram of node features
 
 ---
 
@@ -118,7 +117,7 @@ All output files are saved in a **timestamped folder** in your working directory
 | --------------------- | ---------------------------------------------------------------------- |
 | **Docker not found**  | Ensure Docker is installed and in your system PATH                     |
 | **Permission denied** | Run Docker with `sudo`                                                 |
-| **GPU not detected**  | Make sure NVIDIA drivers and Docker GPU support are properly installed |
+| [**GPU not detected**](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)  | Make sure NVIDIA drivers and Docker GPU support are properly installed |
 
 ---
 
