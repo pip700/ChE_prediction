@@ -133,7 +133,7 @@ If you use **ChEpred** in your research or publication, please cite:
 
 ```bibtex
 @article{,
-  author    = {Dhairiya Agarwal, Anju Sharma, and Prabha Garg},
+  author    = {Dhairiya Agarwal, and Prabha Garg},
   title     = {ChEpred: A Graph Neural Network Approach for Predicting AChE and BuChE Inhibitors},
   journal   = {...},
   volume    = {},
